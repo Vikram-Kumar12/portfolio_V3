@@ -1,0 +1,13 @@
+@import "tailwindcss";
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #fcfaf5;
+}
+
+@font-face {
+  font-family: 'font1';
+  src: url('../fonts/font1.ttf') format('truetype'); 
+  font-weight:700;
+  font-style: normal;
+}
