@@ -28,7 +28,7 @@ function App() {
           <Projects />
           <Skills />
         </Suspense>
-        <Chatbot />
+        {/* <Chatbot /> */}
         <FloatingDock />
         <Footer />
       </div>
