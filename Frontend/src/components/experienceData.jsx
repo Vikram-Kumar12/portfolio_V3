@@ -6,7 +6,7 @@ export const experienceData = [
     endDate: "Present",
 
     company: "DigitalGuru Pte Ltd",
-    companyUrl: "https://digital-guru.vercel.app/",
+    companyUrl: "https://digitalguru.app/",
 
     role: "Freelancer",
 
@@ -35,7 +35,7 @@ export const experienceData = [
     role: "Freelancer",
 
     workTitle: "DigitalGuru Pte Ltd",
-    workUrl: "https://digital-guru.vercel.app/",
+    workUrl: "https://digitalguru.app/",
 
     description:
       "Engineered a responsive and animation-rich agency website, transforming design prototypes into high-performance digital assets with a focus on seamless user experiences.",
