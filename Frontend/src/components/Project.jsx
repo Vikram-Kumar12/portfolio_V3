@@ -66,7 +66,7 @@ const Project = ({ project }) => {
       <div className="w-full md:w-full h-full bg-white rounded-xl md:rounded-[2.5rem] border border-gray-200 shadow-[0_8px_30px_rgb(0,0,0,0.08)] overflow-hidden flex flex-col-reverse lg:flex-row transform-gpu">
         {/* Content Side */}
         <div className="w-full lg:w-1/2 px-6 md:px-10 py-5 flex flex-col justify-center bg-white z-10">
-          <h3 className="text-3xl font-bold text-[#1a1a1a] tracking-tight hover:text-[#f28e2c] transition-colors duration-300">
+          <h3 className="text-2xl font-bold text-[#1a1a1a] tracking-tight hover:text-[#f28e2c] transition-colors duration-300">
             {project.title}
           </h3>
 

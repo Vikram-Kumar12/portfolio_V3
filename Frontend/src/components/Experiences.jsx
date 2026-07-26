@@ -88,7 +88,7 @@ const Experience = () => {
                     href={exp.companyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xl md:text-2xl font-bold text-[#1a1a1a] hover:text-[#9c663e] transition-colors"
+                    className="text-2xl font-bold text-[#1a1a1a] hover:text-[#9c663e] transition-colors"
                   >
                     {exp.company}
                   </a>
@@ -131,7 +131,7 @@ const Experience = () => {
                     {/* Project content */}
                     <div className="flex-1 min-w-0">
                       {/* Project title */}
-                      <h3 className="text-base md:text-lg font-semibold text-[#1a1a1a] mb-2 leading-snug">
+                      <h3 className="text-lg font-semibold text-[#1a1a1a] mb-2 leading-snug">
                         {project.workUrl ? (
                           <a
                             href={project.workUrl}
