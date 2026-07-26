@@ -10,6 +10,7 @@ const Hero = () => {
     "Backend Developer",
     "MERN Stack Developer",
     "Full Stack Developer",
+    "GenAI Engineer",
   ];
 
   useEffect(() => {
@@ -27,12 +28,12 @@ const Hero = () => {
         duration: 1.5,
         ease: "power2.inOut",
       })
-      .to({}, { duration: 1 }) 
-      .to(".moving-border", {
-        rotate: 360,
-        duration: 1.5,
-        ease: "power2.inOut",
-      });
+        .to({}, { duration: 1 })
+        .to(".moving-border", {
+          rotate: 360,
+          duration: 1.5,
+          ease: "power2.inOut",
+        });
     }, borderRef);
     return () => ctx.revert();
   }, []);
@@ -70,21 +71,22 @@ const Hero = () => {
         </h1>
 
         {/* Description */}
-        <div className="text-base md:text-lg lg:text-xl text-zinc-600 leading-relaxed max-w-full md:max-w-[90%]">
+        <div className="text-base md:text-lg lg:text-xl text-zinc-600 max-w-full md:max-w-[90%]">
           <p>
             <span className="text-[#8E5109] font-semibold">
-              MERN Stack Developer
+              Full Stack Developer (MERN + Generative AI)
             </span>{" "}
-            with experience creating user-focused, scalable, and responsive web
-            applications using React.js and delivering secure backend
-            functionality with Node.js, Express.js, and MongoDB.
+            building production-grade web applications with React.js on the frontend
+            and secure, scalable backends using Node.js, Express.js, and MongoDB.
           </p>
           <p className="mt-4">
-            Experienced in freelance projects and passionate about Generative AI
-            and problem solving (200+ LeetCode problems).
+            Shipped live projects for international clients — including a
+            payment-integrated booking platform and an AI tutoring platform powered
+            by RAG, OpenAI API, and vector search. Passionate about Generative AI and
+            problem solving (200+ LeetCode problems).
           </p>
           <p className="mt-4 text-[#8E5109] font-semibold">
-            Open for SDE Internships & Full-Time Roles.
+            Open to SDE Internships, Part-time, Full-time roles, and Freelance Projects.
           </p>
         </div>
       </div>

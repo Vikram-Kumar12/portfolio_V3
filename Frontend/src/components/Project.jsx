@@ -1,4 +1,5 @@
-import { useState, useRef, useEffect, forwardRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { ArrowUpRight, Github } from "lucide-react";
 
 
@@ -18,7 +19,7 @@ export const MediaShowcase = ({ video }) => {
   return (
     <>
       <div
-        className="relative w-full h-full lg:h-full  overflow-hidden group cursor-pointer md:rounded-2xl "
+        className="relative w-full h-full md:h-full px-3 py-3 md:px-0 md:py-0  overflow-hidden group cursor-pointer"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={() => setOpenPlayer(true)}
@@ -32,13 +33,15 @@ export const MediaShowcase = ({ video }) => {
           playsInline
         />
       </div>
-      {openPlayer && (
-        <div className="fixed inset-0 bg-black/90 z-[999] flex items-center justify-center">
-          
+      {openPlayer && createPortal(
+        <div
+          className="fixed inset-0 bg-black z-[9999] flex items-center justify-center"
+          onClick={() => setOpenPlayer(false)}
+        >
           {/* Close Button */}
           <button
             onClick={() => setOpenPlayer(false)}
-            className="absolute top-6 right-6 text-white text-3xl cursor-pointer"
+            className="absolute top-5 right-5 text-white text-3xl cursor-pointer z-10 bg-white/10 hover:bg-white/20 rounded-full w-10 h-10 flex items-center justify-center transition-colors"
           >
             ✕
           </button>
@@ -47,39 +50,31 @@ export const MediaShowcase = ({ video }) => {
             src={video}
             controls
             autoPlay
-            className="w-[95%] lg:w-[80%] max-h-[90vh] rounded-xl"
+            className="w-screen h-screen object-contain"
+            onClick={(e) => e.stopPropagation()}
           />
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
 };
 
-const Project = forwardRef(({ project}, ref) => {  
+const Project = ({ project }) => {
   return (
-    <div
-      ref={ref}
-      className="w-full flex justify-center px-4 md:px-8 absolute top-[-10vw] left-0 h-full md:relative md:h-auto lg:absolute lg:top-[-2vw] lg:left-0 lg:h-full"
-    >
-      <div className="w-full md:w-[85%] lg:w-full h-full bg-white rounded-3xl lg:rounded-[2.5rem] border border-gray-200 shadow-[0_8px_30px_rgb(0,0,0,0.08)] overflow-hidden flex flex-col-reverse lg:flex-row transform-gpu">
+    <div className="w-full">
+      <div className="w-full md:w-full h-full bg-white rounded-xl md:rounded-[2.5rem] border border-gray-200 shadow-[0_8px_30px_rgb(0,0,0,0.08)] overflow-hidden flex flex-col-reverse lg:flex-row transform-gpu">
         {/* Content Side */}
-        <div className="w-full lg:w-1/2 p-6 md:p-10 lg:p-14 flex flex-col justify-center bg-white z-10">
-          {/* <div className="flex items-center gap-4 mb-4 md:mb-6">
-            <span className="text-xs md:text-sm font-bold tracking-widest text-[#9c663e] uppercase">
-              0{index + 1}
-            </span>
-            <div className="h-[2px] w-8 md:w-12 bg-[#f28e2c]"></div>
-          </div> */}
-
-          <h3 className="text-2xl md:text-4xl font-bold text-[#1a1a1a] mb-4 tracking-tight hover:text-[#f28e2c] transition-colors duration-300">
+        <div className="w-full lg:w-1/2 px-6 md:px-10 py-5 flex flex-col justify-center bg-white z-10">
+          <h3 className="text-3xl font-bold text-[#1a1a1a] tracking-tight hover:text-[#f28e2c] transition-colors duration-300">
             {project.title}
           </h3>
 
-          <p className="text-[#4a4a4a] text-sm md:text-lg leading-relaxed mb-6 md:mb-8 line-clamp-3 md:line-clamp-none">
+          <p className="text-[#4a4a4a] text-md leading-relaxed mt-2 mb-2">
             {project.description}
           </p>
 
-          <div className="flex flex-wrap gap-2 mb-6 md:mb-10">
+          <div className="flex flex-wrap gap-2 mb-3">
             {project.tech.map((tech, i) => (
               <span
                 key={i}
@@ -123,6 +118,6 @@ const Project = forwardRef(({ project}, ref) => {
       </div>
     </div>
   );
-});
+};
 
 export default Project;

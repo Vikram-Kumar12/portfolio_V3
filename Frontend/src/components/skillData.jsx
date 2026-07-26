@@ -508,6 +508,137 @@ export const skillData = [
       </svg>
     ),
   },
+  // ===== NEW SKILLS ADDED BELOW =====
+  {
+    Name: "Next.js",
+    color: "hover:text-[#000000]",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 128 128"
+        width="1em"
+        height="1em"
+      >
+        <circle cx="64" cy="64" r="64" fill="#000000" />
+        <path
+          fill="#FFFFFF"
+          d="M106.317 112.014L45.167 32.33H32v63.34h9.68V48.334l50.54 65.68c4.44-1.36 8.7-3.24 12.097-5.56zM96.62 32.33h-9.68v63.34h9.68V32.33z"
+        />
+      </svg>
+    ),
+  },
+  {
+    Name: "Stripe API",
+    color: "hover:text-[#635BFF]",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 128 128"
+        width="1em"
+        height="1em"
+      >
+        <path
+          fill="#635BFF"
+          d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64 64-28.7 64-64S99.3 0 64 0zm0 122c-32.1 0-58-25.9-58-58s25.9-58 58-58 58 25.9 58 58-25.9 58-58 58z"
+        />
+        <path
+          fill="#635BFF"
+          d="M64 10c-29.8 0-54 24.2-54 54s24.2 54 54 54 54-24.2 54-54-24.2-54-54-54zm0 102c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48z"
+        />
+        <path
+          fill="#635BFF"
+          d="M64 20c-24.3 0-44 19.7-44 44s19.7 44 44 44 44-19.7 44-44-19.7-44-44-44zm0 82c-21 0-38-17-38-38s17-38 38-38 38 17 38 38-17 38-38 38z"
+        />
+      </svg>
+    ),
+  },
+  {
+    Name: "Payment Gateway",
+    color: "hover:text-[#00D632]",
+    icon: (
+      <svg
+        stroke="#00D632"
+        fill="#00D632"
+        strokeWidth="0"
+        viewBox="0 0 24 24"
+        height="1em"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z" />
+        <path d="M6 12h12v2H6z" />
+      </svg>
+    ),
+  },
+  {
+    Name: "Firebase",
+    color: "hover:text-[#FFCA28]",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 128 128"
+        width="1em"
+        height="1em"
+      >
+        <path
+          fill="#FFCA28"
+          d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64 64-28.7 64-64S99.3 0 64 0zm0 122c-32.1 0-58-25.9-58-58s25.9-58 58-58 58 25.9 58 58-25.9 58-58 58z"
+        />
+        <path
+          fill="#FFCA28"
+          d="M64 10c-29.8 0-54 24.2-54 54s24.2 54 54 54 54-24.2 54-54-24.2-54-54-54zm0 102c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48z"
+        />
+        <path
+          fill="#FFCA28"
+          d="M64 20c-24.3 0-44 19.7-44 44s19.7 44 44 44 44-19.7 44-44-19.7-44-44-44zm0 82c-21 0-38-17-38-38s17-38 38-38 38 17 38 38-17 38-38 38z"
+        />
+      </svg>
+    ),
+  },
+  {
+    Name: "OpenAI API",
+    color: "hover:text-[#10a37f]",
+    icon: (
+      <svg
+        stroke="#10a37f"
+        fill="#10a37f"
+        strokeWidth="0"
+        viewBox="0 0 24 24"
+        height="1em"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-5.5l3.5-3.5L13 7.5v2h-6v2h6v2z" />
+        <circle cx="12" cy="12" r="1.5" />
+      </svg>
+    ),
+  },
+  {
+    Name: "Hostinger",
+    color: "hover:text-[#673DE6]",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 128 128"
+        width="1em"
+        height="1em"
+      >
+        <circle cx="64" cy="64" r="64" fill="#673DE6" />
+        <path
+          fill="#FFFFFF"
+          d="M64 20c-24.3 0-44 19.7-44 44s19.7 44 44 44 44-19.7 44-44-19.7-44-44-44zm0 82c-21 0-38-17-38-38s17-38 38-38 38 17 38 38-17 38-38 38z"
+        />
+        <path
+          fill="#FFFFFF"
+          d="M64 30c-18.8 0-34 15.2-34 34s15.2 34 34 34 34-15.2 34-34-15.2-34-34-34zm0 62c-15.5 0-28-12.5-28-28s12.5-28 28-28 28 12.5 28 28-12.5 28-28 28z"
+        />
+        <path
+          fill="#FFFFFF"
+          d="M64 40c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm0 42c-9.9 0-18-8.1-18-18s8.1-18 18-18 18 8.1 18 18-8.1 18-18 18z"
+        />
+      </svg>
+    ),
+  },
 ];
 
 export const skillCategories = [
@@ -526,6 +657,7 @@ export const skillCategories = [
       "Redux",
       "Framer Motion",
       "GSAP",
+      "Next"
     ],
   },
   {
@@ -540,6 +672,9 @@ export const skillCategories = [
       "PostgreSQL",
       "RESTful API",
       "Socket IO",
+      "Stripe API",
+      "Payment Gateway",
+      "Firebase"
     ],
   },
   {
@@ -547,7 +682,7 @@ export const skillCategories = [
     icon: <BrainCircuit className="text-[#f28e2c]" size={32} />,
     description:
       "Exploring the world of AI with LLMs, AI agents, RAG, and advanced infrastructures.",
-    skills: ["LLM", "AI Agents", "Vector DB", "Qdrant", "RAG"],
+    skills: ["LLM", "AI Agents", "Vector DB", "Qdrant", "RAG", "OpenAI API"],
   },
   {
     title: "Tools & Architecture",
@@ -561,6 +696,7 @@ export const skillCategories = [
       "Vercel",
       "Render",
       "VS Code",
+      "Hostinger"
     ],
   },
 ];

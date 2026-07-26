@@ -26,7 +26,7 @@ const Experience = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-5 text-[#1a1a1a] overflow-hidden mt-10 lg:mt-0 max-w-7xl mx-auto w-full">
+    <section ref={sectionRef} className="relative text-[#1a1a1a] overflow-hidden mt-5 lg:mt-0 max-w-7xl mx-auto w-full">
       {/* Animated Background Colors */}
       <motion.div
         animate={{
@@ -58,60 +58,46 @@ const Experience = () => {
       <div className="container relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         <div className="text-start mb-5">
           <motion.h2
-            className="text-4xl md:text-5xl font-bold tracking-tight text-[#1a1a1a]"
+            className="text-4xl font-bold tracking-tight text-[#1a1a1a]"
           >
             Experience
           </motion.h2>
           <motion.p
-            // initial={{ opacity: 0 }}
-            // whileInView={{ opacity: 1 }}
-            // transition={{ delay: 0.2 }}
-            // viewport={{ once: true }}
             className="text-gray-700 mt-3 text-lg md:text-xl max-w-2xl leading-relaxed"
           >
             Turning Ideas Into Scalable, Production-Ready Solutions.
           </motion.p>
         </div>
 
-        {/* Content Areas */}
-        <div className="space-y-16 rounded-b-2xl pb-5 lg:pb-3 mt-10">
+        {/* Experience Entries */}
+        <div className="space-y-6">
           {experiences.map((exp, idx) => (
-            <div
+            <motion.div
               key={idx}
-              className="flex flex-col w-full"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="w-full bg-white/60 backdrop-blur-md rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100/80 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 overflow-hidden"
             >
-              <motion.div
-                className="w-full px-6 py-8 md:p-10 flex flex-col items-start bg-white/60 backdrop-blur-md rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100/80 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300"
-              >
-                {/* Header Section */}
-                <div className="w-full flex flex-col md:flex-row md:items-start justify-between mb-6 gap-4">
-                  <div className="flex flex-col">
-                    {/* Work / Role Title */}
-                    <div className="text-[#9c663e] tracking-tight flex items-center gap-2 flex-wrap mb-2">
-                      <a
-                        href={exp.workUrl || exp.companyUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="cursor-pointer hover:underline font-bold text-2xl md:text-3xl"
-                      >
-                        {exp.workTitle || exp.company}
-                      </a>
-                      <span className="text-[#4a4a4a] text-xl md:text-2xl font-light">
-                        | {exp.role}
-                      </span>
-                    </div>
-                    {/* Company (if different from work title) */}
-                    {exp.workTitle && exp.company && (
-                      <div className="text-[#4a4a4a] text-lg">
-                        at <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline">{exp.company}</a>
-                      </div>
-                    )}
-                  </div>
-                  
-                  {/* Period */}
-                  <div
-                    className="relative inline-block p-[1.5px] rounded-full overflow-hidden group shrink-0 mt-1 md:mt-0"
+              {/* ── Company Header Row ── */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-6 pt-5 pb-4 border-b border-gray-100">
+                {/* Left: Company + Role */}
+                <div>
+                  <a
+                    href={exp.companyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xl md:text-2xl font-bold text-[#1a1a1a] hover:text-[#9c663e] transition-colors"
                   >
+                    {exp.company}
+                  </a>
+                  <p className="text-sm md:text-base text-[#4a4a4a] mt-0.5">{exp.role}</p>
+                </div>
+
+                {/* Right: Date range + Location badge */}
+                <div className="flex flex-col items-start sm:items-end gap-1 shrink-0">
+                  <div className="relative inline-block p-[1.5px] rounded-full overflow-hidden">
                     <div className="moving-border absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_00deg,transparent_120deg,#f97316_180deg,transparent_210deg)]" />
                     <div className="relative inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-sm">
                       <AnimatePresence mode="wait">
@@ -120,34 +106,72 @@ const Experience = () => {
                           animate={{ y: 0, opacity: 1 }}
                           exit={{ y: -10, opacity: 0 }}
                           transition={{ duration: 0.4 }}
-                          className="block text-xs md:text-sm font-medium text-gray-700 whitespace-nowrap"
+                          className="text-xs md:text-sm font-medium text-gray-700 whitespace-nowrap"
                         >
-                          <span className="inline-block mr-3">{exp.startDate}</span>
-                          <span>{exp.endDate}</span>
+                          {exp.startDate} — {exp.endDate}
                         </motion.span>
                       </AnimatePresence>
                     </div>
                   </div>
+                  {exp.location && (
+                    <span className="text-xs text-gray-500 font-medium px-2">{exp.location}</span>
+                  )}
                 </div>
+              </div>
 
-                {/* Description */}
-                <p className="text-[#4a4a4a] text-base md:text-lg leading-relaxed mb-8 max-w-4xl">
-                  {exp.description}
-                </p>
+              {/* ── Projects List ── */}
+              <div className="px-6 py-4 space-y-6">
+                {exp.projects.map((project, pIdx) => (
+                  <div key={pIdx} className="flex gap-3 group">
+                    {/* Left accent line */}
+                    <div className="flex flex-col items-center pt-1 shrink-0">
+                      <div className="w-[2px] h-full bg-gradient-to-b from-[#f97316]/60 to-transparent rounded-full min-h-[60px]" />
+                    </div>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 md:gap-3">
-                  {exp.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs md:text-sm font-medium uppercase tracking-wider px-4 py-2 bg-[#fdf4e7] border border-[#faeedb] rounded-lg text-[#9c663e] hover:bg-[#faeedb] transition-colors"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
+                    {/* Project content */}
+                    <div className="flex-1 min-w-0">
+                      {/* Project title */}
+                      <h3 className="text-base md:text-lg font-semibold text-[#1a1a1a] mb-2 leading-snug">
+                        {project.workUrl ? (
+                          <a
+                            href={project.workUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 hover:text-[#9c663e] transition-colors group/title"
+                          >
+                            {project.workTitle}
+                          </a>
+                        ) : (
+                          project.workTitle
+                        )}
+                      </h3>
+
+                      {/* Impact bullets */}
+                      <ul className="space-y-1 mb-3">
+                        {project.impact.map((point, iIdx) => (
+                          <li key={iIdx} className="flex items-start gap-2 text-sm md:text-base text-[#4a4a4a]">
+                            <span className="mt-[6px] w-1.5 h-1.5 rounded-full bg-[#f97316] shrink-0" />
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-1">
+                        {project.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="text-[10px] md:text-xs font-medium uppercase tracking-wider px-3 py-1 bg-[#fdf4e7] border border-[#faeedb] rounded-lg text-[#9c663e] hover:bg-[#faeedb] transition-colors"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
