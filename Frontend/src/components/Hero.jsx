@@ -73,19 +73,25 @@ const Hero = () => {
         {/* Description */}
         <div className="text-base md:text-lg lg:text-xl text-zinc-600 max-w-full md:max-w-[90%]">
           <p>
-            <span className="text-[#8E5109] font-semibold">
-              Full Stack Developer (MERN + Generative AI)
+            <span className="text-[#8E5109] font-semibold tracking-tight leading-none">
+              Full Stack Developer (MERN, Next.js + Generative AI)
             </span>{" "}
-            building production-grade web applications with React.js on the frontend
-            and secure, scalable backends using Node.js, Express.js, and MongoDB.
+            building production-grade web applications — React.js and Next.js on the
+            frontend, and secure, scalable backends with Node.js, Express.js, PostgreSQL,
+            and MongoDB.
           </p>
-          <p className="mt-4">
-            Shipped live projects for international clients — including a
-            payment-integrated booking platform and an AI tutoring platform powered
-            by RAG, OpenAI API, and vector search. Passionate about Generative AI and
-            problem solving (200+ LeetCode problems).
+          <p className="mt-2">
+            Shipped five live products for international clients in Singapore: a
+            multi-country solar energy platform with a custom headless CMS, an AI tutoring
+            platform built on RAG with the OpenAI API and Qdrant vector search, a
+            payment-integrated ride booking platform, and a performance-focused interior
+            design studio site.
           </p>
-          <p className="mt-4 text-[#8E5109] font-semibold">
+          <p className="mt-2">
+            Drawn to the problems that sit between AI and product — retrieval quality,
+            response streaming, and keeping both fast in production. 
+          </p>
+          <p className="mt-2 text-[#8E5109] font-semibold">
             Open to SDE Internships, Part-time, Full-time roles, and Freelance Projects.
           </p>
         </div>
