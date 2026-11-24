@@ -25,7 +25,7 @@ function App() {
 
         <Suspense>
           <Experience />
-          <Projects />
+          {/* <Projects /> */}
           <Skills />
         </Suspense>
         {/* <Chatbot /> */}

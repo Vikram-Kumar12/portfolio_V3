@@ -20,7 +20,7 @@ const Skills = () => {
   };
 
   return (
-    <section className="relative text-[#1a1a1a] overflow-hidden pb-8 ">
+    <section className="relative text-[#1a1a1a] overflow-hidden pb-8 mt-10">
       {/* Background animation */}
       <GridBackgroundPattern />
       <div className="absolute top-0 w-full h-full overflow-hidden pointer-events-none z-0">
